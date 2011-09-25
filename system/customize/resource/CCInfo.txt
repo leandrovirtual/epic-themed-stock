@@ -1,0 +1,5 @@
+﻿Project: INCREDIBLE_C_GINGERBREAD_S
+SKU: VZW WWE
+ROM Build ID: 191119
+Build ID: 191120; SKU: VZW WWE default; CID: default; MNS: default
+Datetime: 2011/05/27 21:17:40

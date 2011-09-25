@@ -1,0 +1,6 @@
+TaskID : 210643
+Project : Incredible_C_Gingerbread_S
+SKU : VERIZON WWE[605]
+ROM Ver : 4.06.605.3
+Customization Id : 191119
+RCMS Id : 32
