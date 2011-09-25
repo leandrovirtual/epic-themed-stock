@@ -1,0 +1,52 @@
+#!/system/bin/sh
+#
+# Created by Calkulin
+
+if [ -e /system/lib/modules/perflock_disable.ko ]; then
+    insmod /system/lib/modules/perflock_disable.ko
+    if [ $? -eq 0 ]; then
+	echo "Perflock DISABLED"
+    else
+	addr=`awk '$3 == "perflock_notifier_call" { print "0x"$1; }' /proc/kallsyms`
+	if [ -n "$addr" ]; then
+	    insmod /system/lib/modules/perflock_disable.ko "perflock_notifier_call_addr=$addr"
+	    if [ $? -eq 0 ]; then
+	    	echo "Perflock DISABLED"
+    	    else
+	    	echo "ERROR!!! Perflock could NOT be DISABLED"
+	    fi
+	fi
+    fi
+fi
+if [ -e /system/lib/modules/cpufreq_conservative.ko ]; then
+    insmod /system/lib/modules/cpufreq_conservative.ko
+    if [ $? -eq 0 ]; then
+	echo "Conservative governor module was ADDED"
+    else
+        echo "ERROR!!! Conservative governor module could NOT be ADDED"
+    fi
+fi
+if [ -e /system/lib/modules/cpufreq_powersave.ko ]; then
+    insmod /system/lib/modules/cpufreq_powersave.ko
+    if [ $? -eq 0 ]; then
+        echo "PowerSave governor module was ADDED"
+    else
+        echo "ERROR!!! PowerSave governor module could NOT be ADDED"
+    fi
+fi
+if [ -e /system/lib/modules/cpufreq_smartass.ko ]; then
+    insmod /system/lib/modules/cpufreq_smartass.ko
+    if [ $? -eq 0 ]; then
+	echo "SmartAss governor module was ADDED"
+    else
+        echo "ERROR!!! SmartAss governor module could NOT be ADDED"
+    fi
+fi
+if [ -e /system/lib/modules/tun.ko ]; then
+    insmod /system/lib/modules/tun.ko
+    if [ $? -eq 0 ]; then
+	echo "Tun module was ADDED"
+    else
+        echo "ERROR!!! Tun module could NOT be ADDED"
+    fi
+fi
