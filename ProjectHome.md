@@ -1,0 +1,1 @@
+A faster, slightly themed version of the Gingerbread OTA for the HTC Incredible. Brought to you by dmeadows013 of EpicRoms. For more info, check out the XDA thread posted on the homepage. If you want a direct, old fashioned download, look in the XDA thread for a link. Also, thanks for checking this out!
